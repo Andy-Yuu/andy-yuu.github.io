@@ -1,4 +1,4 @@
-import { Grid, Avatar, Box, Typography } from "@mui/material";
+import { Grid, Avatar, Box } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import ClearIcon from '@mui/icons-material/Clear';
 import Mic from '@mui/icons-material/Mic';
@@ -34,7 +34,11 @@ const useStyles = makeStyles(theme => ({
     height: 'auto',
 		'&:hover': {
 			boxShadow: '0 2px 5px 3px lightgray',
-		}
+		},
+		[theme.breakpoints.down('sm')]: {
+			...useStyles.searchBar,
+      marginTop: '10px',
+    },
 	},
 	searchBarName: {
     marginLeft: '20px',
@@ -46,7 +50,6 @@ const useStyles = makeStyles(theme => ({
 	clearIcon: {
 		color: "#70757a",
 		borderRight: "1px solid #dfe1e5",
-		height: "65%",
 		marginRight: "10px",
 		paddingRight: "10px",
 	},
@@ -89,7 +92,7 @@ function Navbar(props) {
 				<Grid item xs={12} sm={6} md={6} lg={5}>
 					<div className={classes.searchBar}>
 						<span className={classes.searchBarName}>
-							<Typography>andy yu</Typography>
+							andy yu
 						</span>
 						<span className={classes.searchBarIcons}>
 							<ClearIcon className={classes.clearIcon}/>
