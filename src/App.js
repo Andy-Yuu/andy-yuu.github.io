@@ -4,6 +4,7 @@ import AllContent from "./components/AllContent.js";
 import Navbar from "./components/Navbar.js";
 import { Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { allContentData } from "./resources/data/contentData.js";
 
 const useStyles = makeStyles(theme => ({
   bodyWrapper: {
@@ -41,16 +42,13 @@ function App() {
           <Grid item xs sm md lg className={classes.contentWrapper}>
             {section === 'ALL' ? 
               <div>
-                <AllContent 
-                  url={'www.autodesk.com/plangrid/coop/andy-yu'} 
-                  title={'Autodesk - Frontend Developer'} 
-                  description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc malesuada erat vitae nulla tincidunt, et congue lectus ultrices. Nunc gravida sapien quis est pretium, vitae volutpat turpis iaculis. Nullam eget felis eget nunc dictum aliquam maximus eget lacus. Phasellus mi quam, sagittis sit amet nisl eu, feugiat maximus turpis. Duis non mi nisi.'} 
-                />
-                <AllContent 
-                  url={'www.metricwire.com/coop/andy-yu'} 
-                  title={'MetricWire - Fullstack JavaScript Developer'} 
-                  description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc malesuada erat vitae nulla tincidunt, et congue lectus ultrices. Nunc gravida sapien quis est pretium, vitae volutpat turpis iaculis. Nullam eget felis eget nunc dictum aliquam maximus eget lacus. Phasellus mi quam, sagittis sit amet nisl eu, feugiat maximus turpis. Duis non mi nisi.'} 
-                />
+                {allContentData.map(({url, title, description}) => (
+                  <AllContent 
+                    url={url} 
+                    title={title} 
+                    description={description} 
+                  />
+                ))}
               </div>
               :
               <div>
@@ -72,7 +70,7 @@ export default App;
 /*
 NOTES:
 - add dark mode
-- add images and links to people also search for section
 - update url headers in content
 - update to actual content 
+- add a footer
 */
