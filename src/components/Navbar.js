@@ -77,7 +77,9 @@ const useStyles = makeStyles(theme => ({
       display: 'none' 
     },
 	},
-	btnText: {
+	subsectionBtn: {
+		marginTop: '5px',
+		borderRadius: '0',
 		textTransform: 'none',
 		'&:hover': {
 			background: 'none',
@@ -87,6 +89,7 @@ const useStyles = makeStyles(theme => ({
 
 function Navbar(props) {
 	const classes = useStyles();
+	const { section, setSection } = props;
   return (
 		<div className={classes.header}>
 			<Grid container spacing={1}>
@@ -113,31 +116,31 @@ function Navbar(props) {
 						</span>
 					</div>
 				</Grid>
-				<Grid item sm md lg container alignItems='center' justifyContent='flex-end'>
-						<Box className={classes.hideIconForSmallScreens} style={{width: '40px', height: '40px', marginRight: '30px'}}>
+				<Grid item sm md lg container alignItems='center' justifyContent='flex-end' className={classes.hideIconForSmallScreens}>
+						<Box style={{width: '40px', height: '40px', marginRight: '30px'}}>
 							<DarkModeIcon sx={{width: 40, height: 40}}/>
 						</Box>
-						<Box className={classes.hideIconForSmallScreens}>
+						<Box>
 							<Avatar>A</Avatar>
 						</Box>
 				</Grid>
 			</Grid>
-			<Grid container spacing={1} mt={1} mb={1}>
+			<Grid container spacing={1}>
 				<Grid sm md lg />
-				<Grid item xs={12} sm={10} md={11} lg={11} container>
+				<Grid item xs={12} sm={10} md={11} lg={11} container spacing={2}>
 					<Grid item>
-						<Button className={classes.btnText} startIcon={<img src={google_search} alt='All'/>}>
+						<Button className={classes.subsectionBtn} startIcon={<img src={google_search} alt='All'/>} style={{borderBottom: section === 'ALL' ? '3px solid #1a73e8' : ''}} onClick={() => setSection('ALL')}>
 							<Typography variant="body2">All</Typography>
 						</Button>
 					</Grid>
 					<Grid item>
-						<Button className={classes.btnText} startIcon={<img src={google_news} alt='Projects'/>}>
+						<Button className={classes.subsectionBtn} startIcon={<img src={google_news} alt='Projects'/>} style={{borderBottom: section === 'PROJECTS' ? '3px solid #1a73e8' : ''}} onClick={() => setSection('PROJECTS')}>
 							<Typography variant="body2">Projects</Typography>
 						</Button>
 					</Grid>
 					<Grid item>
 						<Link href={resume} target="_blank" underline="none">
-							<Button className={classes.btnText} startIcon={<img src={google_book} alt='Search'/>}>
+							<Button className={classes.subsectionBtn} startIcon={<img src={google_book} alt='Search'/>}>
 									<Typography variant="body2">Resume</Typography>
 							</Button>
 						</Link>
