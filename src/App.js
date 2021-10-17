@@ -71,7 +71,6 @@ export default App;
 
 /*
 NOTES:
-- update photo section on about card
 - add dark mode
 - add images and links to people also search for section
 - update url headers in content

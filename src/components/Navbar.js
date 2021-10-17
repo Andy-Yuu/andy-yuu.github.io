@@ -3,12 +3,12 @@ import { makeStyles } from "@mui/styles";
 import ClearIcon from '@mui/icons-material/Clear';
 import Search from '@mui/icons-material/Search';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
-import google_logo from "../images/Google_2015_logo.png";
-import google_mic from "../images/Google_mic.png";
-import google_search from "../images/Google_search.png";
-import google_news from "../images/Google_news.png";
-import google_book from "../images/Google_book.png";
-import resume from "../images/AndyYu_Resume_2021.pdf";
+import google_logo from "../resources/images/Google_2015_logo.png";
+import google_mic from "../resources/images/Google_mic.png";
+import google_search from "../resources/images/Google_search.png";
+import google_news from "../resources/images/Google_news.png";
+import google_book from "../resources/images/Google_book.png";
+import resume from "../resources/data/AndyYu_Resume_2021.pdf";
 
 const useStyles = makeStyles(theme => ({
 	header: {
@@ -101,7 +101,7 @@ function Navbar(props) {
 						<img src={google_logo} alt='Google' className={classes.googleImage}/>
 					</Box>
 					<Box className={classes.hideIconForBigScreens}>
-						<Avatar sx={{width: 24, height: 24}}>A</Avatar>
+						<Avatar sx={{width: 24, height: 24, bgcolor: ("#" + ((1<<24)*Math.random() | 0).toString(16))}}>{Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1).toUpperCase()}</Avatar>
 					</Box>
 				</Grid>
 				<Grid item xs={12} sm={6} md={6} lg={5}>

@@ -2,7 +2,8 @@ import { Grid, Box, Card, CardMedia, CardContent, Typography, Divider, Link } fr
 import { makeStyles } from "@mui/styles";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import pic from '../images/pic.jpg';
+import pic from '../resources/images/pic.jpg';
+import { peopleData } from '../resources/data/contentData';
 
 const useStyles = makeStyles(theme => ({
 	card: {
@@ -23,6 +24,15 @@ const useStyles = makeStyles(theme => ({
 		height: '60px', 
 		textAlign: 'center'
 	},
+	personIcons: {
+		margin: '4px 4px 0 0', 
+		width: '72px', 
+		height: 'auto', 
+		textAlign: 'center',
+	},
+	personImg: {
+		borderRadius: '8px'
+	}
 }))
 
 function AboutCard(props) {
@@ -47,13 +57,13 @@ function AboutCard(props) {
 					<Typography variant='subtitle1'>Profiles</Typography>
 					<Grid container>
 						<Box className={classes.profileIcons}>
-							<Link href='https://github.com/andy-yuu' underline='hover'>
+							<Link href='https://github.com/andy-yuu' target="_blank" underline='hover'>
 								<GitHubIcon style={{color: 'black'}}/>
 								<Typography variant='body2'>GitHub</Typography>
 							</Link>
 						</Box>
 						<Box className={classes.profileIcons}>
-							<Link href='https://www.linkedin.com/in/andy-yuu/' underline='hover'>
+							<Link href='https://www.linkedin.com/in/andy-yuu/' target="_blank" underline='hover'>
 								<LinkedInIcon style={{color: '#0072b1'}}/>
 								<Typography variant='body2'>LinkedIn</Typography>
 							</Link>
@@ -61,54 +71,14 @@ function AboutCard(props) {
 					</Grid>
 					<Typography variant='subtitle1'>People also search for</Typography>
 					<Grid container>
-						<Box className={classes.profileIcons}>
-							<Link href='' underline='hover'>
-								<GitHubIcon style={{color: 'black'}}/>
-								<Typography variant='body2'>Sunny</Typography>
-							</Link>
-						</Box>
-						<Box className={classes.profileIcons}>
-							<Link href='' underline='hover'>
-								<GitHubIcon style={{color: 'black'}}/>
-								<Typography variant='body2'>Jimmy</Typography>
-							</Link>
-						</Box>
-						<Box className={classes.profileIcons}>
-							<Link href='' underline='hover'>
-								<GitHubIcon style={{color: 'black'}}/>
-								<Typography variant='body2'>Steven</Typography>
-							</Link>
-						</Box>
-						<Box className={classes.profileIcons}>
-							<Link href='' underline='hover'>
-								<GitHubIcon style={{color: 'black'}}/>
-								<Typography variant='body2'>Richie</Typography>
-							</Link>
-						</Box>
-						<Box className={classes.profileIcons}>
-							<Link href='' underline='hover'>
-								<GitHubIcon style={{color: 'black'}}/>
-								<Typography variant='body2'>Michael</Typography>
-							</Link>
-						</Box>
-						<Box className={classes.profileIcons}>
-							<Link href='' underline='hover'>
-								<GitHubIcon style={{color: 'black'}}/>
-								<Typography variant='body2'>Eddie</Typography>
-							</Link>
-						</Box>
-						<Box className={classes.profileIcons}>
-							<Link href='' underline='hover'>
-								<GitHubIcon style={{color: 'black'}}/>
-								<Typography variant='body2'>Simon</Typography>
-							</Link>
-						</Box>
-						<Box className={classes.profileIcons}>
-							<Link href='' underline='hover'>
-								<GitHubIcon style={{color: 'black'}}/>
-								<Typography variant='body2'>Benny</Typography>
-							</Link>
-						</Box>
+						{peopleData.map(({name, link, img}) => (
+							<Box className={classes.personIcons}>
+								<Link href={link} target="_blank" underline='hover'>
+									<img src={img} alt='personImg' style={{borderRadius: '8px'}}/>
+									<Typography variant='body2'>{name}</Typography>
+								</Link>
+							</Box>
+						))}
 					</Grid>
 				</CardContent>
 			</Card>
