@@ -1,18 +1,23 @@
-import { Grid, Avatar, Box } from "@mui/material";
+import { Grid, Avatar, Box, Button, Typography, Link } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import ClearIcon from '@mui/icons-material/Clear';
-import Mic from '@mui/icons-material/Mic';
 import Search from '@mui/icons-material/Search';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import google_logo from "../images/Google_2015_logo.png";
+import google_mic from "../images/Google_mic.png";
+import google_search from "../images/Google_search.png";
+import google_news from "../images/Google_news.png";
+import google_book from "../images/Google_book.png";
+import resume from "../images/AndyYu_Resume_2021.pdf";
 
 const useStyles = makeStyles(theme => ({
 	header: {
+		borderBottom: "1px solid #dfe1e5",
 		[theme.breakpoints.up('sm')]: {
-      margin: '25px 30px 0px 30px',
+      padding: '25px 30px 0px 30px',
     },
 		[theme.breakpoints.down('sm')]: {
-      margin: '25px 15px 0px 15px',
+      padding: '25px 15px 0px 15px',
     },
 	},
  	googleImage: {
@@ -54,8 +59,9 @@ const useStyles = makeStyles(theme => ({
 		paddingRight: "10px",
 	},
 	micIcon: {
-		color: "#4285f4",
 		paddingRight: "10px",
+		width: '24px',
+		height: '24px',
 	},
 	searchIcon: {
 		color: "#4285f4",
@@ -68,9 +74,15 @@ const useStyles = makeStyles(theme => ({
 	},
 	hideIconForSmallScreens: {
 		[theme.breakpoints.down('sm')]: {
-      display: 'none'
+      display: 'none' 
     },
 	},
+	btnText: {
+		textTransform: 'none',
+		'&:hover': {
+			background: 'none',
+		},
+	}
 }))
 
 function Navbar(props) {
@@ -96,7 +108,7 @@ function Navbar(props) {
 						</span>
 						<span className={classes.searchBarIcons}>
 							<ClearIcon className={classes.clearIcon}/>
-							<Mic className={classes.micIcon}/>
+							<img src={google_mic} alt='Microphone' className={classes.micIcon}/>
 							<Search className={classes.searchIcon}/>
 						</span>
 					</div>
@@ -108,6 +120,28 @@ function Navbar(props) {
 						<Box className={classes.hideIconForSmallScreens}>
 							<Avatar>A</Avatar>
 						</Box>
+				</Grid>
+			</Grid>
+			<Grid container spacing={1} mt={1} mb={1}>
+				<Grid sm md lg />
+				<Grid item xs={12} sm={10} md={11} lg={11} container>
+					<Grid item>
+						<Button className={classes.btnText} startIcon={<img src={google_search} alt='All'/>}>
+							<Typography variant="body2">All</Typography>
+						</Button>
+					</Grid>
+					<Grid item>
+						<Button className={classes.btnText} startIcon={<img src={google_news} alt='Projects'/>}>
+							<Typography variant="body2">Projects</Typography>
+						</Button>
+					</Grid>
+					<Grid item>
+						<Link href={resume} target="_blank" underline="none">
+							<Button className={classes.btnText} startIcon={<img src={google_book} alt='Search'/>}>
+									<Typography variant="body2">Resume</Typography>
+							</Button>
+						</Link>
+					</Grid>
 				</Grid>
 			</Grid>
 		</div>
