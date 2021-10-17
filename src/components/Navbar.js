@@ -121,7 +121,7 @@ function Navbar(props) {
 							<DarkModeIcon sx={{width: 40, height: 40}}/>
 						</Box>
 						<Box>
-							<Avatar>A</Avatar>
+							<Avatar sx={{bgcolor: ("#" + ((1<<24)*Math.random() | 0).toString(16))}}>{Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1).toUpperCase()}</Avatar>
 						</Box>
 				</Grid>
 			</Grid>

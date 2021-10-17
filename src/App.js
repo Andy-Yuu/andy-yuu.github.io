@@ -73,7 +73,6 @@ export default App;
 NOTES:
 - update photo section on about card
 - add dark mode
-- change avatar letters on refresh?
 - add images and links to people also search for section
 - update url headers in content
 - update to actual content 
