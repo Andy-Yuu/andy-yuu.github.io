@@ -1,4 +1,4 @@
-import { Grid, Avatar, Box, Button, Typography, Link } from "@mui/material";
+import { Grid, Avatar, Box, Button, Typography, Link, IconButton } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import ClearIcon from '@mui/icons-material/Clear';
 import Search from '@mui/icons-material/Search';
@@ -84,19 +84,25 @@ const useStyles = makeStyles(theme => ({
 		'&:hover': {
 			background: 'none',
 		},
-	}
+	},
+	darkModeLGScreen: {
+		width: '40px', 
+		height: '40px', 
+		marginRight: '30px',
+		color: 'black'
+	},
 }))
 
 function Navbar(props) {
 	const classes = useStyles();
-	const { section, setSection } = props;
+	const { section, setSection, darkMode, setDarkMode } = props;
   return (
 		<div className={classes.header}>
 			<Grid container spacing={1}>
 				<Grid item xs={12} sm={2} md={1} lg={1} container justifyContent='space-between' alignItems='center'>
-					<Box className={classes.hideIconForBigScreens} style={{width: '24px', height: '24px'}}>
+					<IconButton className={classes.hideIconForBigScreens} style={{width: '24px', height: '24px', color: 'black'}} onClick={() => setDarkMode(!darkMode)}>
 						<DarkModeIcon/>
-					</Box>
+					</IconButton>
 					<Box>
 						<img src={google_logo} alt='Google' className={classes.googleImage}/>
 					</Box>
@@ -117,9 +123,9 @@ function Navbar(props) {
 					</div>
 				</Grid>
 				<Grid item sm md lg container alignItems='center' justifyContent='flex-end' className={classes.hideIconForSmallScreens}>
-						<Box style={{width: '40px', height: '40px', marginRight: '30px'}}>
+						<IconButton className={classes.darkModeLGScreen} onClick={() => setDarkMode(!darkMode)}>
 							<DarkModeIcon sx={{width: 40, height: 40}}/>
-						</Box>
+						</IconButton>
 						<Box>
 							<Avatar sx={{bgcolor: ("#" + ((1<<24)*Math.random() | 0).toString(16))}}>{Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1).toUpperCase()}</Avatar>
 						</Box>

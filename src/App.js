@@ -31,11 +31,12 @@ const useStyles = makeStyles(theme => ({
 }))
 
 function App() {
-  const [section, setSection] = useState('ALL')
+  const [section, setSection] = useState('ALL');
+  const [darkMode, setDarkMode] = useState(false)
   const classes = useStyles();
   return (
-    <div>
-      <Navbar section={section} setSection={setSection}/>
+    <div style={{backgroundColor: darkMode ? '#202124' : ''}}>
+      <Navbar section={section} setSection={setSection} darkMode={darkMode} setDarkMode={setDarkMode}/>
       <div className={classes.bodyWrapper}>
         <Grid container spacing={1}>
           <Grid lg={1} />
@@ -70,7 +71,6 @@ export default App;
 /*
 NOTES:
 - add dark mode
-- update url headers in content
 - update to actual content 
 - add a footer
 */
