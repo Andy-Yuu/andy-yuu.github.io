@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
 import AboutCard from "./components/AboutCard.js";
 import AllContent from "./components/AllContent.js";
 import Navbar from "./components/Navbar.js";
@@ -30,39 +31,50 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-function App() {
+function App(props) {
   const [section, setSection] = useState('ALL');
   const [darkMode, setDarkMode] = useState(false)
   const classes = useStyles();
+  const { outtertheme } = props;
   return (
-    <div style={{backgroundColor: darkMode ? '#202124' : ''}}>
-      <Navbar section={section} setSection={setSection} darkMode={darkMode} setDarkMode={setDarkMode}/>
-      <div className={classes.bodyWrapper}>
-        <Grid container spacing={1}>
-          <Grid lg={1} />
-          <Grid item xs sm md lg className={classes.contentWrapper}>
-            {section === 'ALL' ? 
-              <div>
-                {allContentData.map(({url, title, description}) => (
-                  <AllContent 
-                    url={url} 
-                    title={title} 
-                    description={description} 
-                  />
-                ))}
-              </div>
-              :
-              <div>
-                projects section
-              </div>
-            }
+    <ThemeProvider theme={createTheme({
+      ...outtertheme,
+      palette: {
+        mode: darkMode ? "dark" : "light",
+      }
+    })}>
+      <div>
+        <CssBaseline />
+        <Navbar section={section} setSection={setSection} darkMode={darkMode} setDarkMode={setDarkMode}/>
+        <div className={classes.bodyWrapper}>
+          <Grid container spacing={1}>
+            <Grid item={true} lg={1} />
+            <Grid item xs sm md lg className={classes.contentWrapper}>
+              {section === 'ALL' ? 
+                <div>
+                  {allContentData.map(({url, title, description}, index) => (
+                    <AllContent 
+                      url={url} 
+                      title={title} 
+                      description={description} 
+                      darkMode={darkMode}
+                      key={index}
+                    />
+                  ))}
+                </div>
+                :
+                <div>
+                  projects section
+                </div>
+              }
+            </Grid>
+            <Grid item xs={12} sm={12} md={5} lg={6} className={classes.aboutWrapper}>
+              {section === 'ALL' ? <AboutCard/> : undefined}
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={12} md={5} lg={6} className={classes.aboutWrapper}>
-            <AboutCard/>
-          </Grid>
-        </Grid>
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 }
 
@@ -70,7 +82,6 @@ export default App;
 
 /*
 NOTES:
-- add dark mode
 - update to actual content 
 - add a footer
 */

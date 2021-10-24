@@ -14,11 +14,12 @@ const useStyles = makeStyles(theme => ({
 
 function AllContent(props) {
 	const classes = useStyles();
+	const { url, title, description, darkMode } = props;
 	return (
 		<div className={classes.content}>
-			<Typography variant='subtitle2' style={{color: '#202124'}}>{props.url}</Typography>
-			<Typography variant='h6' style={{color: '#1a0dab'}}>{props.title}</Typography>
-			<Typography variant='body2' style={{color: '#4d5156'}}>{props.description}</Typography>
+			<Typography variant='subtitle2' style={{color: darkMode ? '' : '#202124'}}>{url}</Typography>
+			<Typography variant='h6' style={{color: darkMode ? '#8ab4f8' : '#1a0dab'}}>{title}</Typography>
+			<Typography variant='body2' style={{color: darkMode ? '' : '#4d5156'}}>{description}</Typography>
 		</div>
 	)
 }

@@ -2,17 +2,18 @@ import { Grid, Avatar, Box, Button, Typography, Link, IconButton } from "@mui/ma
 import { makeStyles } from "@mui/styles";
 import ClearIcon from '@mui/icons-material/Clear';
 import Search from '@mui/icons-material/Search';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 import google_logo from "../resources/images/Google_2015_logo.png";
 import google_mic from "../resources/images/Google_mic.png";
 import google_search from "../resources/images/Google_search.png";
-import google_news from "../resources/images/Google_news.png";
-import google_book from "../resources/images/Google_book.png";
+import google_drive from "../resources/images/Google_drive.png";
+import google_doc from "../resources/images/Google_doc.png";
 import resume from "../resources/data/AndyYu_Resume_2021.pdf";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = (darkMode) => makeStyles(theme => ({
 	header: {
-		borderBottom: "1px solid #dfe1e5",
+		borderBottom: darkMode ? "1px solid #3c4043" : "1px solid #dfe1e5",
 		[theme.breakpoints.up('sm')]: {
       padding: '25px 30px 0px 30px',
     },
@@ -21,24 +22,26 @@ const useStyles = makeStyles(theme => ({
     },
 	},
  	googleImage: {
-    cursor: 'pointer',
-    display: 'block',
+		filter: darkMode ? 'invert(1%) sepia(1%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(80%)' : '',
+		cursor: 'pointer',
+		display: 'block',
 		marginLeft: 'auto',
 		marginRight: 'auto',
 		width: '100%',
 		maxWidth: '92px',
-    height: 'auto',
+		height: 'auto',
 	},
 	searchBar: {
+		backgroundColor: darkMode ? '#303134' : '',
     padding: '10px 0px',
-    boxShadow: '0 2px 5px 1px lightgray',
+    boxShadow: darkMode ? '' : '0 2px 5px 1px lightgray',
     border: '0px',
     borderRadius: '24px',
     width: '100%',
     outline: 'none',
     height: 'auto',
 		'&:hover': {
-			boxShadow: '0 2px 5px 3px lightgray',
+			boxShadow: darkMode ? '' : '0 2px 5px 3px lightgray',
 		},
 		[theme.breakpoints.down('sm')]: {
 			...useStyles.searchBar,
@@ -57,15 +60,14 @@ const useStyles = makeStyles(theme => ({
 		borderRight: "1px solid #dfe1e5",
 		marginRight: "10px",
 		paddingRight: "10px",
+		width: '34px'
 	},
 	micIcon: {
 		paddingRight: "10px",
-		width: '24px',
-		height: '24px',
 	},
 	searchIcon: {
 		color: "#4285f4",
-		paddingRight: "15px",
+		marginRight: "15px",
 	},
 	hideIconForBigScreens: {
 		[theme.breakpoints.up('sm')]: {
@@ -89,19 +91,18 @@ const useStyles = makeStyles(theme => ({
 		width: '40px', 
 		height: '40px', 
 		marginRight: '30px',
-		color: 'black'
 	},
 }))
 
 function Navbar(props) {
-	const classes = useStyles();
 	const { section, setSection, darkMode, setDarkMode } = props;
+	const classes = useStyles(darkMode)();
   return (
 		<div className={classes.header}>
 			<Grid container spacing={1}>
 				<Grid item xs={12} sm={2} md={1} lg={1} container justifyContent='space-between' alignItems='center'>
-					<IconButton className={classes.hideIconForBigScreens} style={{width: '24px', height: '24px', color: 'black'}} onClick={() => setDarkMode(!darkMode)}>
-						<DarkModeIcon/>
+					<IconButton color="inherit" className={classes.hideIconForBigScreens} style={{width: '24px', height: '24px'}} onClick={() => setDarkMode(!darkMode)}>
+						{darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
 					</IconButton>
 					<Box>
 						<img src={google_logo} alt='Google' className={classes.googleImage}/>
@@ -123,8 +124,8 @@ function Navbar(props) {
 					</div>
 				</Grid>
 				<Grid item sm md lg container alignItems='center' justifyContent='flex-end' className={classes.hideIconForSmallScreens}>
-						<IconButton className={classes.darkModeLGScreen} onClick={() => setDarkMode(!darkMode)}>
-							<DarkModeIcon sx={{width: 40, height: 40}}/>
+						<IconButton color="inherit" className={classes.darkModeLGScreen} onClick={() => setDarkMode(!darkMode)}>
+							{darkMode ? <Brightness7Icon sx={{width: 40, height: 40}}/> : <Brightness4Icon sx={{width: 40, height: 40}}/>}
 						</IconButton>
 						<Box>
 							<Avatar sx={{bgcolor: ("#" + ((1<<24)*Math.random() | 0).toString(16))}}>{Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1).toUpperCase()}</Avatar>
@@ -132,7 +133,7 @@ function Navbar(props) {
 				</Grid>
 			</Grid>
 			<Grid container spacing={1}>
-				<Grid sm md lg />
+				<Grid item sm md lg />
 				<Grid item xs={12} sm={10} md={11} lg={11} container spacing={2}>
 					<Grid item>
 						<Button className={classes.subsectionBtn} startIcon={<img src={google_search} alt='All'/>} style={{borderBottom: section === 'ALL' ? '3px solid #1a73e8' : ''}} onClick={() => setSection('ALL')}>
@@ -140,13 +141,13 @@ function Navbar(props) {
 						</Button>
 					</Grid>
 					<Grid item>
-						<Button className={classes.subsectionBtn} startIcon={<img src={google_news} alt='Projects'/>} style={{borderBottom: section === 'PROJECTS' ? '3px solid #1a73e8' : ''}} onClick={() => setSection('PROJECTS')}>
+						<Button className={classes.subsectionBtn} startIcon={<img src={google_drive} alt='Projects'/>} style={{borderBottom: section === 'PROJECTS' ? '3px solid #1a73e8' : ''}} onClick={() => setSection('PROJECTS')}>
 							<Typography variant="body2">Projects</Typography>
 						</Button>
 					</Grid>
 					<Grid item>
 						<Link href={resume} target="_blank" underline="none">
-							<Button className={classes.subsectionBtn} startIcon={<img src={google_book} alt='Search'/>}>
+							<Button className={classes.subsectionBtn} startIcon={<img src={google_doc} alt='Search'/>}>
 									<Typography variant="body2">Resume</Typography>
 							</Button>
 						</Link>

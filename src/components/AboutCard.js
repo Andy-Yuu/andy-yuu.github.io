@@ -71,8 +71,8 @@ function AboutCard(props) {
 					</Grid>
 					<Typography variant='subtitle1'>People also search for</Typography>
 					<Grid container>
-						{peopleData.map(({name, link, img}) => (
-							<Box className={classes.personIcons}>
+						{peopleData.map(({name, link, img}, index) => (
+							<Box className={classes.personIcons} key={index}>
 								<Link href={link} target="_blank" underline='hover'>
 									<img src={img} alt='personImg' style={{borderRadius: '8px'}}/>
 									<Typography variant='body2'>{name}</Typography>
