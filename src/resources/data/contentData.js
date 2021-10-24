@@ -59,16 +59,16 @@ export const allContentData = [
     {
         url: 'www.metricwire.com > coop > Waterloo, ON > Jan 2021 - Apr 2021',
         title: 'MetricWire - Fullstack JavaScript Developer',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc malesuada erat vitae nulla tincidunt, et congue lectus ultrices. Nunc gravida sapien quis est pretium, vitae volutpat turpis iaculis. Nullam eget felis eget nunc dictum aliquam maximus eget lacus. Phasellus mi quam, sagittis sit amet nisl eu, feugiat maximus turpis. Duis non mi nisi.'
+        description: 'Leveraged React, Typescript, Material UI, Restify, MongoDB, and Mongoose to implement features such as a comprehensive CRM system, bulk account creation, and landing page builder for researchers to manage participant data and increase data analytic efficiency. Created fully automated end-to-end test suites with Cypress to ensure over 90% of platform features were working as intended ... '
     },
     {
         url: 'www.teleperformance.com > Toronto, ON > May 2019 - Jul 2019',
         title: 'Teleperformance - Technical Support',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc malesuada erat vitae nulla tincidunt, et congue lectus ultrices. Nunc gravida sapien quis est pretium, vitae volutpat turpis iaculis. Nullam eget felis eget nunc dictum aliquam maximus eget lacus. Phasellus mi quam, sagittis sit amet nisl eu, feugiat maximus turpis. Duis non mi nisi.'
+        description: 'Successfully resolved 90+% of clientele reboot loop issues with Verifone VX machines and provided support with partial downloads requiired to prevent further service interruptions with a first call resolution rate of 95+% ...'
     },
     {
         url: 'www.nofrills.com > Toronto, ON, Apr 2016 - Aug 2018',
         title: 'No Frills - Grocery Clerk',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc malesuada erat vitae nulla tincidunt, et congue lectus ultrices. Nunc gravida sapien quis est pretium, vitae volutpat turpis iaculis. Nullam eget felis eget nunc dictum aliquam maximus eget lacus. Phasellus mi quam, sagittis sit amet nisl eu, feugiat maximus turpis. Duis non mi nisi.'
+        description: 'Properly stock retail shelves with products, ensure products are front facing and orderly on shelves, provide accurate information to cusomters on location of items in store, trained over 10+ new employees ...'
     },
 ]

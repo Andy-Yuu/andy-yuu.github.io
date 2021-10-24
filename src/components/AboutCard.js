@@ -49,9 +49,9 @@ function AboutCard(props) {
 				<Divider/>
 				<CardContent>
 					<Typography variant='body2' sx={{ marginBottom: '10px' }}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pulvinar felis quis eros semper porttitor. Nulla suscipit metus ut mi bibendum pharetra. Praesent neque lacus, pretium vel fermentum quis, fringilla id turpis. Fusce in dui et tortor blandit rhoncus at quis est. Aenean vel feugiat massa. Mauris vel massa non tellus condimentum blandit vitae eget nibh. Morbi aliquam semper libero, in molestie est vestibulum in. Quisque pulvinar dapibus turpis ut suscipit.
+						Andy Yu is a third year computer engineering student at the University of Waterloo based in Toronto. He focuses his work on full stack development to bring the best experience to the user. Currently an intern at Autodesk, he is seeking summer 2022 internship opportunities!
 					</Typography>
-					<Typography variant='body2' sx={{ marginBottom: '10px' }}>Born: October 88, 2000, Toronto, Canada</Typography>
+					<Typography variant='body2' sx={{ marginBottom: '10px' }}>Born: October 31, 2000, Toronto, Canada</Typography>
 					<Typography variant='body2' sx={{ marginBottom: '10px' }}>Height: 1.75 m</Typography>
 					<Typography variant='body2' sx={{ marginBottom: '10px' }}>Education: Computer Engineering, University of Waterloo</Typography>
 					<Typography variant='subtitle1'>Profiles</Typography>
