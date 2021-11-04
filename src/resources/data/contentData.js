@@ -15,7 +15,7 @@ export const peopleData = [
     },
     {
         name: 'Jimmy',
-        link: 'https://www.linkedin.com/in/sunnyzheng7822',
+        link: 'https://yu-jimmy.netlify.app/',
         img: jimmyPicture,
     },
     {
