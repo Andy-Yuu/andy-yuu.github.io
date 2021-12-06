@@ -52,7 +52,7 @@ export const peopleData = [
 
 export const allContentData = [
     {
-        url: 'www.autodesk.com > coop > San Fransico, CA > Sept 2021 - Present',
+        url: 'www.autodesk.com > coop > San Fransico, CA > Sept 2021 - Dec 2021',
         title: 'Autodesk - Frontend Developer',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc malesuada erat vitae nulla tincidunt, et congue lectus ultrices. Nunc gravida sapien quis est pretium, vitae volutpat turpis iaculis. Nullam eget felis eget nunc dictum aliquam maximus eget lacus. Phasellus mi quam, sagittis sit amet nisl eu, feugiat maximus turpis. Duis non mi nisi.'
     },
@@ -70,5 +70,38 @@ export const allContentData = [
         url: 'www.nofrills.com > Toronto, ON, Apr 2016 - Aug 2018',
         title: 'No Frills - Grocery Clerk',
         description: 'Properly stock retail shelves with products, ensure products are front facing and orderly on shelves, provide accurate information to cusomters on location of items in store, trained over 10+ new employees ...'
+    },
+]
+
+export const projectContentData = [
+    {
+        url: 'https://andy-yuu.github.io/rhythm-game/',
+        link: 'https://andy-yuu.github.io/rhythm-game/',
+        title: 'Rhythm Game',
+        description: 'Thirty second rhythm game that requires user to press arrow keys in the specified sequence ...'
+    },
+    {
+        title: 'Youtube Party',
+        description: 'Allow\'s users to watch youtube videos together in a virtual room ... '
+    },
+    {
+        title: 'Shadow Hunters',
+        description: 'Implemented a board game as an online player versus player game with a backend server that uses sockets to handle real-time user commands and functionality ... '
+    },
+    {
+        title: 'QuickWeatherCheck',
+        description: 'A chrome extension that provides the current weather along with the weather in three hour intervals with dynamic icons that change corresponding to the weather. Uses geolocation and OpenWeatherMap api to provide real time data ... '
+    },
+    {
+        title: 'Arcade Bartop',
+        description: 'Built a retro arcade bartop with MDF wood. System uses a Raspberry Pi, connected to joysticks and arcade buttons ... '
+    },
+    {
+        title: 'Laser Light',
+        description: 'Detects real time input and tracks objects that pass through a laser. Information is passed into a log and stats file to view ... '
+    },
+    {
+        title: 'Maze Traversing Robot',
+        description: 'Constructed a robot with sensory devices to detect and avoid obstacles to find a path out of a maze ... '
     },
 ]

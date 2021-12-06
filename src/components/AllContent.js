@@ -10,17 +10,29 @@ const useStyles = makeStyles(theme => ({
 			margin: '0 30px 20px 30px',
 		}
 	},
+	link: {
+		textDecoration: 'none',
+		color: 'inherit',
+	}
 }))
+
+const ConditionalWrapper = ({ condition, wrapper, children }) => 
+  condition ? wrapper(children) : children;
 
 function AllContent(props) {
 	const classes = useStyles();
-	const { url, title, description, darkMode } = props;
+	const { url, title, description, darkMode, link } = props;
 	return (
-		<div className={classes.content}>
-			<Typography variant='subtitle2' style={{color: darkMode ? '' : '#202124'}}>{url}</Typography>
-			<Typography variant='h6' style={{color: darkMode ? '#8ab4f8' : '#1a0dab'}}>{title}</Typography>
-			<Typography variant='body2' style={{color: darkMode ? '' : '#4d5156'}}>{description}</Typography>
-		</div>
+		<ConditionalWrapper
+			condition={link}
+			wrapper={children => <a href={link} target="_blank" rel="noreferrer" className={classes.link}>{children}</a>}
+		>
+			<div className={classes.content}>
+				<Typography variant='subtitle2' style={{color: darkMode ? '' : '#202124'}}>{url}</Typography>
+				<Typography variant='h6' style={{color: darkMode ? '#8ab4f8' : '#1a0dab'}}>{title}</Typography>
+				<Typography variant='body2' style={{color: darkMode ? '' : '#4d5156'}}>{description}</Typography>
+			</div>
+		</ConditionalWrapper>
 	)
 }
 

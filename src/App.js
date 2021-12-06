@@ -3,11 +3,17 @@ import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
 import AboutCard from "./components/AboutCard.js";
 import AllContent from "./components/AllContent.js";
 import Navbar from "./components/Navbar.js";
+import Footer from "./components/Footer.js";
 import { Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { allContentData } from "./resources/data/contentData.js";
+import { allContentData, projectContentData } from "./resources/data/contentData.js";
 
 const useStyles = makeStyles(theme => ({
+  app: {
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+  },
   bodyWrapper: {
     padding: '20px 0px',
     [theme.breakpoints.down('sm')]: {
@@ -43,7 +49,7 @@ function App(props) {
         mode: darkMode ? "dark" : "light",
       }
     })}>
-      <div>
+      <div className={classes.app}>
         <CssBaseline />
         <Navbar section={section} setSection={setSection} darkMode={darkMode} setDarkMode={setDarkMode}/>
         <div className={classes.bodyWrapper}>
@@ -64,7 +70,16 @@ function App(props) {
                 </div>
                 :
                 <div>
-                  projects section
+                  {projectContentData.map(({url, title, description, link}, index) => (
+                    <AllContent 
+                      link={link}
+                      url={url} 
+                      title={title} 
+                      description={description} 
+                      darkMode={darkMode}
+                      key={index}
+                    />
+                  ))}
                 </div>
               }
             </Grid>
@@ -74,14 +89,9 @@ function App(props) {
           </Grid>
         </div>
       </div>
+      <Footer darkMode={darkMode}/>
     </ThemeProvider>
   );
 }
 
 export default App;
-
-/*
-NOTES:
-- update to actual content 
-- add a footer
-*/
