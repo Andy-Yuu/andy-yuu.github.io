@@ -54,7 +54,7 @@ export const allContentData = [
     {
         url: 'www.autodesk.com > coop > San Fransico, CA > Sept 2021 - Dec 2021',
         title: 'Autodesk - Frontend Developer',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc malesuada erat vitae nulla tincidunt, et congue lectus ultrices. Nunc gravida sapien quis est pretium, vitae volutpat turpis iaculis. Nullam eget felis eget nunc dictum aliquam maximus eget lacus. Phasellus mi quam, sagittis sit amet nisl eu, feugiat maximus turpis. Duis non mi nisi.'
+        description: 'Adopted React, Typescript and Redux to streamline the upload flow process of construction sheets, incorporate permission level access to certain areas of the dashboard, maintain a log list of published sheets and models, slack integration as a feedback mechanism on a beta feature, contribute to an internal component package ...'
     },
     {
         url: 'www.metricwire.com > coop > Waterloo, ON > Jan 2021 - Apr 2021',

@@ -49,12 +49,12 @@ function AboutCard(props) {
 				<Divider/>
 				<CardContent>
 					<Typography variant='body2' sx={{ marginBottom: '10px' }}>
-						Andy Yu is a third year computer engineering student at the University of Waterloo based in Toronto. He focuses his work on full stack development to bring the best experience to the user. Currently an intern at Autodesk, he is seeking summer 2022 internship opportunities!
+						Andy Yu is a third year computer engineering student at the University of Waterloo, based in Toronto. He focuses his work on web development to bring the best experience to the user. Recently finished an internship at Autodesk, he is seeking summer 2022 internship opportunities!
 					</Typography>
 					<Typography variant='body2' sx={{ marginBottom: '10px' }}>Born: October 31, 2000, Toronto, Canada</Typography>
-					<Typography variant='body2' sx={{ marginBottom: '10px' }}>Chinese Zodiac Sign: &#128009;</Typography>
 					<Typography variant='body2' sx={{ marginBottom: '10px' }}>Height: 1.75 m</Typography>
 					<Typography variant='body2' sx={{ marginBottom: '10px' }}>Education: Computer Engineering, University of Waterloo</Typography>
+					<Typography variant='body2' sx={{ marginBottom: '10px' }}>Chinese Zodiac Sign: &#128009;</Typography>
 					<Typography variant='subtitle1'>Profiles</Typography>
 					<Grid container>
 						<Box className={classes.profileIcons}>
