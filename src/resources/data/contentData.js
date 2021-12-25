@@ -55,7 +55,7 @@ export const allContentData = [
     {
         url: 'www.teleperformance.com > Toronto, ON > May 2019 - Jul 2019',
         title: 'Teleperformance - Technical Support',
-        description: 'Successfully resolved 90+% of clientele reboot loop issues with Verifone VX machines and provided support with partial downloads requiired to prevent further service interruptions with a first call resolution rate of 95+% ...'
+        description: 'Successfully resolved 90+% of clientele reboot loop issues with Verifone VX machines and provided support with partial downloads required to prevent further service interruptions with a first call resolution rate of 95+% ...'
     },
     {
         url: 'www.nofrills.com > Toronto, ON, Apr 2016 - Aug 2018',
