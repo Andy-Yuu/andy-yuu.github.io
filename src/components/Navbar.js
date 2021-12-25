@@ -4,12 +4,6 @@ import ClearIcon from '@mui/icons-material/Clear';
 import Search from '@mui/icons-material/Search';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-import google_logo from "../resources/images/Google_2015_logo.png";
-import google_mic from "../resources/images/Google_mic.png";
-import google_search from "../resources/images/Google_search.png";
-import google_drive from "../resources/images/Google_drive.png";
-import google_doc from "../resources/images/Google_doc.png";
-import resume from "../resources/data/AndyYu_Resume.pdf";
 
 const useStyles = (darkMode) => makeStyles(theme => ({
 	header: {
@@ -105,7 +99,7 @@ function Navbar(props) {
 						{darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
 					</IconButton>
 					<Box>
-						<img src={google_logo} alt='Google' className={classes.googleImage}/>
+						<img src="resources/images/Google_2015_logo.png" alt='Google' className={classes.googleImage}/>
 					</Box>
 					<Box className={classes.hideIconForBigScreens}>
 						<Avatar sx={{width: 24, height: 24, bgcolor: ("#" + ((1<<24)*Math.random() | 0).toString(16))}}>{Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1).toUpperCase()}</Avatar>
@@ -118,7 +112,7 @@ function Navbar(props) {
 						</span>
 						<span className={classes.searchBarIcons}>
 							<ClearIcon className={classes.clearIcon}/>
-							<img src={google_mic} alt='Microphone' className={classes.micIcon}/>
+							<img src="resources/images/Google_mic.png" alt='Microphone' className={classes.micIcon}/>
 							<Search className={classes.searchIcon}/>
 						</span>
 					</div>
@@ -136,18 +130,18 @@ function Navbar(props) {
 				<Grid item sm md lg />
 				<Grid item xs={12} sm={10} md={11} lg={11} container spacing={2}>
 					<Grid item>
-						<Button className={classes.subsectionBtn} startIcon={<img src={google_search} alt='All'/>} style={{borderBottom: section === 'ALL' ? '3px solid #1a73e8' : ''}} onClick={() => setSection('ALL')}>
+						<Button className={classes.subsectionBtn} startIcon={<img src="resources/images/Google_search.png" alt='All'/>} style={{borderBottom: section === 'ALL' ? '3px solid #1a73e8' : ''}} onClick={() => setSection('ALL')}>
 							<Typography variant="body2">All</Typography>
 						</Button>
 					</Grid>
 					<Grid item>
-						<Button className={classes.subsectionBtn} startIcon={<img src={google_drive} alt='Projects'/>} style={{borderBottom: section === 'PROJECTS' ? '3px solid #1a73e8' : ''}} onClick={() => setSection('PROJECTS')}>
+						<Button className={classes.subsectionBtn} startIcon={<img src="resources/images/Google_drive.png" alt='Projects'/>} style={{borderBottom: section === 'PROJECTS' ? '3px solid #1a73e8' : ''}} onClick={() => setSection('PROJECTS')}>
 							<Typography variant="body2">Projects</Typography>
 						</Button>
 					</Grid>
 					<Grid item>
-						<Link href={resume} target="_blank" underline="none">
-							<Button className={classes.subsectionBtn} startIcon={<img src={google_doc} alt='Search'/>}>
+						<Link href="https://andy-yuu.github.io/resources/AndyYu_resume.pdf" target="_blank" underline="none">
+							<Button className={classes.subsectionBtn} startIcon={<img src="resources/images/Google_doc.png" alt='Search'/>}>
 									<Typography variant="body2">Resume</Typography>
 							</Button>
 						</Link>

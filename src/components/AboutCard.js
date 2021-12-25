@@ -2,7 +2,6 @@ import { Grid, Box, Card, CardMedia, CardContent, Typography, Divider, Link } fr
 import { makeStyles } from "@mui/styles";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import pic from '../resources/images/pic.jpg';
 import { peopleData } from '../resources/data/contentData';
 
 const useStyles = makeStyles(theme => ({
@@ -42,7 +41,7 @@ function AboutCard(props) {
 			<Card sx={{ maxWidth: 336 }}>
 				<CardMedia 
 					component='img'
-					image={pic}
+					image="resources/images/pic.jpg"
 					alt="picture of myself!"
 				/>
 				<Typography variant='h5' className={classes.name}>Andy Yu</Typography>
