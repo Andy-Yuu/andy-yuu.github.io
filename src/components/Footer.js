@@ -14,6 +14,7 @@ function Footer(props) {
     const classes = useStyles(darkMode)();
 	return (
 		<div className={classes.footer}>
+            <div>Google search inspired theme</div>
             <div>Built with React and Material UI, but mainly ❤️ and &#9749;!</div>
             <div>Andy Yu © 2021</div>
         </div>

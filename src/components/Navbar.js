@@ -9,7 +9,7 @@ import google_mic from "../resources/images/Google_mic.png";
 import google_search from "../resources/images/Google_search.png";
 import google_drive from "../resources/images/Google_drive.png";
 import google_doc from "../resources/images/Google_doc.png";
-import resume from "../resources/data/AndyYu_Resume_2021.pdf";
+import resume from "../resources/data/AndyYu_Resume.pdf";
 
 const useStyles = (darkMode) => makeStyles(theme => ({
 	header: {
