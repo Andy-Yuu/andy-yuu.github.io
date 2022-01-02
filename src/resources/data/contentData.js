@@ -11,7 +11,7 @@ export const peopleData = [
     },
     {
         name: 'Steven',
-        link: 'https://www.linkedin.com/in/slin349/',
+        link: 'https://slin349.github.io/PersonalWebsite/',
         img: 'resources/images/steven.jpg',
     },
     {
