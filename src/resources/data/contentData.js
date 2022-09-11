@@ -43,24 +43,19 @@ export const peopleData = [
 
 export const allContentData = [
     {
+        url: 'www.splunk.com > coop > San Jose, CA > May 2022 - Aug 20222',
+        title: 'Splunk - Software Engineer Intern',
+        description: 'Collaborated and maintained a dashboard framework package (@splunk/dashboard-core) that manages the state between visualizations, inputs and their datasources using React and TypeScript, wrote a comprehensive engineering requirements document on a highly requested feature outlining the steps, requirements, implementation details, and alternatives for this initiative based on the product requirements ...'
+    },
+    {
         url: 'www.autodesk.com > coop > San Francisco, CA > Sept 2021 - Dec 2021',
-        title: 'Autodesk - Frontend Developer',
+        title: 'Autodesk - Frontend Developer Intern',
         description: 'Adopted React, Typescript and Redux to streamline the upload flow process of construction sheets, incorporate permission level access to certain areas of the dashboard, maintain a log list of published sheets and models, slack integration as a feedback mechanism on a beta feature, cooperate on an internal React component package ...'
     },
     {
         url: 'www.metricwire.com > coop > Waterloo, ON > Jan 2021 - Apr 2021',
-        title: 'MetricWire - Fullstack JavaScript Developer',
+        title: 'MetricWire - Fullstack Engineer Intern',
         description: 'Leveraged React, Typescript, Material UI, Restify, MongoDB, and Mongoose to implement features such as a comprehensive CRM system, bulk account creation, and landing page builder for researchers to manage participant data and increase data analytic efficiency. Created fully automated end-to-end test suites with Cypress to ensure over 90% of platform features were working as intended ... '
-    },
-    {
-        url: 'www.teleperformance.com > Toronto, ON > May 2019 - Jul 2019',
-        title: 'Teleperformance - Technical Support',
-        description: 'Successfully resolved 90+% of clientele reboot loop issues with Verifone VX machines and provided support with partial downloads required to prevent further service interruptions with a first call resolution rate of 95+% ...'
-    },
-    {
-        url: 'www.nofrills.com > Toronto, ON, Apr 2016 - Aug 2018',
-        title: 'No Frills - Grocery Clerk',
-        description: 'Properly stock retail shelves with products, ensure products are front facing and orderly on shelves, provide accurate information to cusomters on location of items in store, trained over 10+ new employees ...'
     },
 ]
 
