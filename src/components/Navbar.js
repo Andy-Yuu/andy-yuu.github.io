@@ -140,7 +140,7 @@ function Navbar(props) {
 						</Button>
 					</Grid>
 					<Grid item>
-						<Link href="https://andy-yuu.github.io/resources/Andy-Yu-resume.pdf" target="_blank" underline="none">
+						<Link href="https://andy-yuu.github.io/resources/Andy-Yu-Resume.pdf" target="_blank" underline="none">
 							<Button className={classes.subsectionBtn} startIcon={<img src="resources/images/Google_doc.png" alt='Search'/>}>
 									<Typography variant="body2">Resume</Typography>
 							</Button>
